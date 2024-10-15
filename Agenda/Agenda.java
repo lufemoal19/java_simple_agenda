@@ -100,7 +100,7 @@ public class Agenda{
 
     public static void main(String[] args){
         Agenda agenda = new Agenda();
-        Contacto contacto = new Contacto("Felipe","Morera","85081275","lufemoal19@gmail.com");        
+        Contacto contacto = new Contacto();        
         Scanner inputUsuario = new Scanner(System.in);
         char opcion = 'a';
         // Menu
