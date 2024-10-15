@@ -111,6 +111,7 @@ public class Agenda{
             System.out.println("[1] GUARDAR CONTACTO");
             System.out.println("[2] LEER AGENDA");
             System.out.println("[0] SALIR");
+            System.out.print("OPCION: ");
             String opcionUsuario = inputUsuario.nextLine();
             opcion = opcionUsuario.charAt(0); // Obtener el primer caracter del input del usuario
             switch (opcion) {
@@ -125,16 +126,12 @@ public class Agenda{
 
                     System.out.print("INGRESE EL NOMBRE: ");
                     nombre = inputUsuario.nextLine();
-                    System.out.println("");
                     System.out.print("INGRESE EL APELLIDO: ");
                     apellido = inputUsuario.nextLine();
-                    System.out.println("");
                     System.out.print("INGRESE EL TELEFONO: ");
                     telefono = inputUsuario.nextLine();
-                    System.out.println("");
                     System.out.print("INGRESE EL EMAIL: ");
                     email = inputUsuario.nextLine();
-                    System.out.println("");
 
                     contacto = new Contacto(nombre, apellido, telefono, email);
                     agenda.guardarAgenda(contacto.toString());
