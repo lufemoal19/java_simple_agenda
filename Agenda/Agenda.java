@@ -98,13 +98,11 @@ public class Agenda{
         }
     }
 
-
     public static void main(String[] args){
         Agenda agenda = new Agenda();
         Contacto contacto = new Contacto("Felipe","Morera","85081275","lufemoal19@gmail.com");        
         Scanner inputUsuario = new Scanner(System.in);
         char opcion = 'a';
-
         // Menu
         do{
             System.out.println("AGENDA");
@@ -135,20 +133,15 @@ public class Agenda{
 
                     contacto = new Contacto(nombre, apellido, telefono, email);
                     agenda.guardarAgenda(contacto.toString());
-
                     break;
-
                 case '2':
                     // Leer Agenda.txt
                     agenda.mostrarAgenda();
                     break;
-                
                 default:
                     System.out.println("OPCION NO DISPONIBLE");
                     break;
-                
             }
-
         }while (opcion != '0');
         inputUsuario.close();
     }
