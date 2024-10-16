@@ -4,9 +4,11 @@ import java.io.*;
 import java.util.Scanner;
 
 public class Agenda{
-    private String nombreArchivo = "./Agenda.txt";
+    private String nombreArchivo;
 
-    public Agenda(){}
+    public Agenda(String nombreArchivo){
+        this.nombreArchivo = nombreArchivo;
+    }
 
     public String guardarContacto(String nombre, String apellido, String telefono, String email){
         return "Nombre: " + nombre + " " + apellido + "\tTelefono: " + telefono + "\t" + email + "\n";
@@ -46,7 +48,7 @@ public class Agenda{
     }
 
     public static void main(String[] args){
-        Agenda agenda = new Agenda();
+        Agenda agenda = new Agenda("./Agenda.txt");
         Scanner inputUsuario = new Scanner(System.in);
         char opcion = 'a';
         // Menu
@@ -78,7 +80,6 @@ public class Agenda{
                     email = inputUsuario.nextLine();
 
                     contacto = agenda.guardarContacto(nombre, apellido, telefono, email);
-
                     agenda.guardarAgenda(contacto.toString());
                     break;
                 case '2':
