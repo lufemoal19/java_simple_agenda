@@ -8,6 +8,10 @@ public class Agenda{
 
     public Agenda(){}
 
+    public String guardarContacto(String nombre, String apellido, String telefono, String email){
+        return "Nombre: " + nombre + " " + apellido + "\tTelefono: " + telefono + "\t" + email + "\n";
+    }
+
     public boolean guardarAgenda(String contacto){
         if (!contacto.isEmpty()){
             try{
@@ -41,66 +45,8 @@ public class Agenda{
         }
     }
 
-    public static class Contacto{
-        private String nombre;
-        private String apellido;
-        private String telefono;
-        private String email;
-
-        public Contacto(){
-            this.nombre = "";
-            this.apellido = "";
-            this.telefono = "";
-            this.email = "";
-        }
-
-        public Contacto(String nombre, String apellido, String telefono, String email){
-            this.nombre = nombre;
-            this.apellido = apellido;
-            this.telefono = telefono;
-            this.email = email;
-        }
-
-        public String getNombre(){
-            return this.nombre;
-        }
-
-        public void setNombre(String nombre){
-            this.nombre = nombre;
-        }
-
-        public String getApellido(){
-            return this.apellido;
-        }
-
-        public void setApellido(String apellido){
-            this.apellido = apellido;
-        }
-
-        public String getTelefono(){
-            return this.telefono;
-        }
-
-        public void setTelefono(String telefono){
-            this.telefono = telefono;
-        }
-
-        public String getEmail(){
-            return this.email;
-        }
-
-        public void setEmail(String email){
-            this.email = email;
-        }
-
-        public String toString(){
-            return "Nombre: " + getNombre() + " " + getApellido() + "\tTelefono: " + getTelefono() + "\t" + getEmail() + "\n";
-        }
-    }
-
     public static void main(String[] args){
         Agenda agenda = new Agenda();
-        Contacto contacto = new Contacto();        
         Scanner inputUsuario = new Scanner(System.in);
         char opcion = 'a';
         // Menu
@@ -121,7 +67,7 @@ public class Agenda{
                     // Guardar contacto nuevo
                     System.out.println("GUARDAR USUARIO...");
                     String nombre, apellido, telefono, email;
-
+                    String contacto;
                     System.out.print("INGRESE EL NOMBRE: ");
                     nombre = inputUsuario.nextLine();
                     System.out.print("INGRESE EL APELLIDO: ");
@@ -131,7 +77,8 @@ public class Agenda{
                     System.out.print("INGRESE EL EMAIL: ");
                     email = inputUsuario.nextLine();
 
-                    contacto = new Contacto(nombre, apellido, telefono, email);
+                    contacto = agenda.guardarContacto(nombre, apellido, telefono, email);
+
                     agenda.guardarAgenda(contacto.toString());
                     break;
                 case '2':
